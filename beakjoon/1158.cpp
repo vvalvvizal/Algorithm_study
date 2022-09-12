@@ -16,7 +16,7 @@ int main() {
     cout << "<";
     while (1) {
         int tmp = 0;
-        for (int j = 0; j < k - 1; j++) { // k번 앞에서 뽑기
+        for (int j = 0; j < k - 1; j++) { 
             tmp = q.front();
             q.pop_front();
             q.push_back(tmp);
