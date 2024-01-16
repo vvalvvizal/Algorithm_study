@@ -24,7 +24,7 @@ else:
 #     dp = [float('inf')]*(n+1) #초기값을 무한대로 지정 
 #     dp[0] = 0
 
-#     for i in range(1,n+1):
+#     for i in range(1,n+1): #1~n까지 
 #         for c in coin:
 #             if i>=c and dp[i-c]+1<dp[i]:
 #                 dp[i] = dp[i-c]+1
