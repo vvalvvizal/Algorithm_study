@@ -1,25 +1,18 @@
-def backtrack(candidates, m):
-    result = []
-
-    def dfs(i, current):
-        if len(current) == m:
-            result.append(current.copy())
+def backtrack():#DFS 
+        if len(sequence)==m:#종료조건 
+            print(" ".join(map(str,sequence)))
             return
+        for i in range(1,n+1):
+            if i not in sequence:
+                 sequence.append(i)
+                 backtrack()
+                 sequence.pop()
 
-        if i >= len(candidates):
-            return
 
-        current.append(candidates[i])
-        dfs(i + 1, current)
-        current.pop()
-        dfs(i + 1, current)
-
-    dfs(0, [])
-    return result
-
-candidates = []
 n, m = map(int, input().split())
-for i in range(1, n + 1): 
-
-result = backtrack(candidates, m)
-print(result)
+#길이가  m인 수열 
+#길이가 m이 되면 가지쳐서 올라오기
+sequence = [] 
+visited = [False] * (n+1)
+backtrack()
+#n까지의 수 중에 길이가 m인 수열 
