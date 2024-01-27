@@ -1,5 +1,5 @@
 from collections import deque
-
+#회전하는 큐 
 # 큐 초기화
 queue = deque()
 
