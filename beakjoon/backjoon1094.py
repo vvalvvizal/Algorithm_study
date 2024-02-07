@@ -3,7 +3,7 @@ count = 0
 length = 64
 stick = []
 total = 0
-
+result = 0
 while total != n: 
     if n == length:
         stick.append(length)
