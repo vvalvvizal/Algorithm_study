@@ -64,7 +64,7 @@ def dijkstra(graph, start):
     visited = [False] * n
 
     distance[start] = 0
-    pq = [(0, start)]  # 우선순위 큐
+    pq = [(0, start)]  # 우선순위 큐, 초기값 (0,start)
 
     while pq:
         dist, node = heapq.heappop(pq)
@@ -80,7 +80,7 @@ def dijkstra(graph, start):
         for v, w in graph[node]:
             if not visited[v] and dist + w < distance[v]:
                 distance[v] = dist + w
-                heapq.heappush(pq, (distance[v], v))
+                heapq.heappush(pq, (distance[v], v)) #튜플의 첫번째값, 가중치 기준으로 정렬 
 
     return distance
 
