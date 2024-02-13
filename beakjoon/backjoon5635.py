@@ -1,11 +1,8 @@
-import sys
-input = sys.stdin.readline
-
-lst = []
+student = []
 for _ in range(int(input())):
     n,d,m,y = input().strip().split()
     d,m,y = map(int,(d,m,y))
-    lst.append((y,m,d,n))
-lst.sort()
-print(lst[-1][3])
-print(lst[0][3])
+    student.append((y,m,d,n))#set
+student.sort()
+print(student[-1][3])
+print(student[0][3])
