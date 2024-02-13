@@ -1,5 +1,4 @@
 import sys
-import math
 
 t = int(input())
 for _ in range(t):
