@@ -12,8 +12,6 @@ for _ in range(int(input())):
 
         l = 0
         h = y
-        time = x/v[-1]
-
         while l<=h:
             m = (l+h)//2
             boost = ((x-m)/v[-1])+1
