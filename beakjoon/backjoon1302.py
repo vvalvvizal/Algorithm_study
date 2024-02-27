@@ -8,8 +8,9 @@ for _ in range(n):
     else:
         lst[str]+=1
         
-sorted_key = sorted(lst.keys())
+sorted_key = sorted(lst.keys()) #키들만 정렬해서 반환 
 
-max_key = max(sorted_key, key=lst.get)
+max_key = max(sorted_key, key= lambda x: lst[x]) #40ms 
+#max_key = max(sorted_key, key=lst.get) #44ms 
 print(max_key)
 
