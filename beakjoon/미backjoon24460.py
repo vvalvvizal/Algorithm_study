@@ -1,48 +1,21 @@
-from collections import deque
-import heapq #최소힙 
+def devide_conquer(n, holl):
 
-def devide_conquer(n): 
-    q1 = []
-    q2 = []
-    q3 =[]
-    q4 = []
-    result = []
-    for i in range(n//2):
-        for j in range(n//2):
-            heapq.heappush(q1,holl[i][j])
+    # 분할 정복
+    divided_holls = []
+    for i in range(0, n, n // 2):
+        for j in range(0, n, n // 2):
+            divided_holl = [row[j:j + n // 2] for row in holl[i:i + n // 2]]
+            divided_holls.append((len(divided_holl), divided_holl))
 
-    for i in range(n//2,n):
-        for j in range(n//2, n):
-            heapq.heappush(q4,holl[i][j])
-    for i in range(n//2):
-        for j in range(n//2,n):
-            heapq.heappush(q2,holl[i][j])
-    for i in range(n//2, n):
-        for j in range(n//2):
-            heapq.heappush(q3,holl[i][j])
-    heapq.heappop(q1)
-    heapq.heappop(q2)
-    heapq.heappop(q3)
-    heapq.heappop(q4)
+    divided_holls.sort()  # 각 부분행렬을 크기순으로 정렬
 
+    # 가장 작은 부분행렬을 선택하여 재귀호출
+    result = devide_conquer(n // 2, divided_holls[0][1])
 
-    heapq.heappush(result, heapq.heappop(q1))
-    heapq.heappush(result, heapq.heappop(q2))
-    heapq.heappush(result, heapq.heappop(q3))
-    heapq.heappush(result, heapq.heappop(q4))
-    
-    print(heapq.heappop(result))
+    return result
 
-    if n==1:
-        return heapq.heappop(result)
-    else:
-        return devide_conquer(n//2)
+n = int(input())
+holl = [list(map(int, input().split())) for _ in range(n)]
 
-
-n = int (input())
-holl = [[]*n for _ in range(n)]
-for i in range(n):
-    holl[i] = list(map(int,input().split()))
-
-min = devide_conquer(n)
-print(min)
+min_val = devide_conquer(n, holl)
+print(min_val)
