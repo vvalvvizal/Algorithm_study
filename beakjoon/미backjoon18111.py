@@ -12,7 +12,7 @@ for l in land:
         if lst:
             tmp = lst.pop()
             if tmp != pos:
-                dict[pos]=1
+                dict[pos]                                                                                                                                                                                                                                                                                                                       =1
             else:
                 dict[pos]+=1
         lst.append(pos)
