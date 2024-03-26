@@ -35,10 +35,14 @@ res = 0
 target = 0
 # 그리디
 for i in range(m):
-    egg = min(m-i,n) #달걀 개수 n, m명인데 m<i개 사는 경우 n(달걀최대개수)으로 바꿔줌
+    #i의 범위는 0~m-1
+    
+    #몇 명의 고객이 사갔나 = i
+    egg = min(m-i,n)
+    #m-i : 현재고객부터 마지막고객
 
     if res < lst[i] * egg:
-        res = lst[i] * egg  #수익 초기화 
+        res = lst[i] * egg  #수익 초기화  
         target = lst[i] #달걀 가격 초기화 
         
 print(target, res)

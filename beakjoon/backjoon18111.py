@@ -53,7 +53,7 @@ for target in range(257): #브루트포스 작은값->큰값이기때문에 높�
         
     if max_target + b >= min_target: #오버돼서 인벤토리 들어온거 + 기존 인벤토리블록 >= 빼야하는 블록
         if min_target + (max_target * 2) <= answer: #빼는데 걸리는 시간 
-            answer = min_target + (max_target * 2) # 최저 시간
+            answer = min_target + (max_target * 2) # 최저 시간 갱신
             idx = target # 층수
 
 print(answer, idx)
