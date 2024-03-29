@@ -12,10 +12,10 @@ for r in range(m):
             nc = c + dc[i]
             if 0 <= nr < m and 0 <= nc < n: 
                 if lst[nr][nc] == lst[r][c]:
-                    if lst[r][c] == 'W': 
+                    if lst[r][c] == 'W':
                         lst[r][c] = 'B'
                     elif lst[r][c] == 'B':
-                        lst[r][c] = 'W'
+                        lst[r][c] = 'W' 
                     count += 1
 
 print(count)
