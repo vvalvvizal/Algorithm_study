@@ -18,9 +18,9 @@ while q:
         maxi = slow+1
     for i in range(n+1):#브루트포스  0~n
         q = deque(lst)
-        tmp = q.pop()#앞에서 i개 
+        tmp = q.pop()
         for j in range(n+1):
             if q:
-                tmp = q.popleft()#뒤에서 j개
+                tmp = q.popleft()
 
     print(maxi)
