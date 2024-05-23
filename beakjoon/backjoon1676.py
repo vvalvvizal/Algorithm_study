@@ -14,6 +14,7 @@ n = int(input())
 
 a=0
 b=0
+c=0
 for i in range(2,n+1):
     num = i
     while num%2==0:
