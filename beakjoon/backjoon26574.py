@@ -8,3 +8,4 @@ for i in lst:
     for _ in range(2):
         print(i , end=' ')
     print("")
+    #####
