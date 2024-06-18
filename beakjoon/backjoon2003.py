@@ -17,4 +17,4 @@ for right in range(n):
         
 print(count)
 
-
+# # #count = result
