@@ -9,7 +9,7 @@ count = 0
 for right in range(n):
     sum += material[right]
     materialcount+=1 #사용한 재료의 수 
-    if sum == m and materialcount==2: #m이 되었을때, 재료수가 2개일때
+    if sum == m and materialcount==2: #m이 되었을때, 재료수가 2개일
         count +=1 
         materialcount=0 #사용 재료수 0으로 리셋
         sum=0
